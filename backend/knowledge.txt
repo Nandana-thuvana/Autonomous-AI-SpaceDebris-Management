@@ -1,0 +1,78 @@
+PROJECT: Generative AI Driven Autonomous Space Debris Detection and Clean-Up Planning System
+
+This system analyzes orbital parameters of objects in Earth orbit to determine whether they are active satellites or space debris. It also generates an autonomous debris removal mission plan based on orbital mechanics and orbit type.
+
+----------------------------------------
+ORBITAL PARAMETERS USED TO DEFINE MOTION
+----------------------------------------
+1. Semi Major Axis (SMA) – Distance from Earth’s center (km)
+2. Eccentricity (ECC) – Shape of orbit (0 = circular, >0 = elliptical)
+3. Inclination (INC) – Tilt of orbit (degrees)
+4. Right Ascension of Ascending Node (RAAN)
+5. Argument of Perigee (ARGP)
+6. Mean Anomaly (MA)
+
+These six parameters completely define the motion and position of an object in space.
+
+----------------------------------------
+ORBIT CLASSIFICATION BY ALTITUDE
+----------------------------------------
+LEO (Low Earth Orbit)
+Altitude: 160 km – 2000 km
+Examples: ISS, Starlink, Hubble
+Most space debris is concentrated here.
+
+MEO (Medium Earth Orbit)
+Altitude: 2000 km – 35786 km
+Examples: GPS, Galileo navigation satellites
+
+GEO (Geostationary Orbit)
+Altitude: 35786 km
+Satellites remain fixed over one point on Earth.
+Used for communication satellites.
+
+----------------------------------------
+DIFFERENCE BETWEEN ACTIVE SATELLITES AND SPACE DEBRIS
+----------------------------------------
+Active Satellites:
+- Controlled and maintained orbit
+- Very low eccentricity (nearly circular)
+- Stable inclination
+- Predictable motion due to station-keeping
+
+Space Debris:
+- Uncontrolled motion
+- Irregular or drifting orbit
+- Higher collision probability
+- No orbit correction maneuvers
+
+----------------------------------------
+CLEAN-UP STRATEGY BASED ON ORBIT TYPE
+----------------------------------------
+LEO Debris Removal:
+- Use debris removal microsatellites
+- Capture using nets or robotic arms
+- Deploy drag sails
+- Allow atmospheric re-entry and burn-up
+
+MEO Debris Removal:
+- Robotic servicer spacecraft with ion propulsion
+- Capture and perform controlled de-orbit burn toward Earth
+
+GEO Debris Removal:
+- Space tug with ion thrusters
+- Transfer debris to graveyard orbit 300 km above GEO
+
+----------------------------------------
+SPECIAL ORBITAL CONDITIONS
+----------------------------------------
+If Eccentricity > 0.2:
+Debris likely in unstable elliptical orbit. Requires orbit stabilization before capture.
+
+If Inclination > 30 degrees:
+Plane change maneuver required. Extra fuel needed.
+
+----------------------------------------
+PROJECT GOAL
+----------------------------------------
+To build an AI-driven system that identifies space debris and generates scientifically accurate autonomous clean-up mission plans using orbital mechanics knowledge.

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Space Debris Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">🚀</span>
+    <div>
+      <h1>Space Debris Management</h1>
+      <p>Real-time Orbital Tracking System</p>
+    </div>
+  </div>
+  <div class="status">
+    <span class="dot"></span> SYSTEM ACTIVE
+  </div>
+</header>
+
+<nav class="navbar">
+  <a class="active" data-page="dashboard">Dashboard</a>
+  <a data-page="live">Live Monitoring</a>
+  <a data-page="catalog">Debris Catalog</a>
+  <a data-page="risk">Risk Assessment</a>
+  <a data-page="analytics">Analytics</a>
+</nav>
+
+<main class="container">
+
+<!-- ================= DASHBOARD ================= -->
+<section id="dashboard" class="page active">
+
+  <div class="orbit-panel">
+    <h3>Classify Object & Generate Cleanup Plan</h3>
+
+    <form method="POST" action="/">
+      <div class="form-grid">
+        <input name="sma" placeholder="Semi Major Axis (km)" required />
+        <input name="ecc" placeholder="Eccentricity" required />
+        <input name="inc" placeholder="Inclination" required />
+        <input name="raan" placeholder="RAAN" required />
+        <input name="argp" placeholder="Argument of Perigee" required />
+        <input name="ma" placeholder="Mean Anomaly" required />
+      </div>
+      <button class="analyze-btn">Analyze</button>
+    </form>
+
+    {% if result %}
+    <div class="result-box">
+      <h4>Result: {{ result }}</h4>
+      <pre>{{ plan }}</pre>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+  </div>
+
+</section>
+
+<!-- ================= LIVE MONITORING ================= -->
+<section id="live" class="page">
+  <h3>Live Space Object Monitoring</h3>
+
+  <div class="stats">
+    <div class="card">
+      <p>Tracked Objects</p>
+      <h2>27,452</h2>
+    </div>
+    <div class="card">
+      <p>Active Satellites</p>
+      <h2>8,214</h2>
+    </div>
+    <div class="card">
+      <p>Debris Count</p>
+      <h2>19,238</h2>
+    </div>
+    <div class="card">
+      <p>Radar Coverage</p>
+      <h2>97.4%</h2>
+    </div>
+  </div>
+
+  <div class="status"></div>
+</section>
+
+<!-- ================= DEBRIS CATALOG ================= -->
+<section id="catalog" class="page">
+  <h3>Debris Catalog</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Orbit</th>
+        <th>Altitude</th>
+        <th>Velocity</th>
+        <th>Risk</th>
+        <th>Last Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Filled by JS -->
+    </tbody>
+  </table>
+</section>
+
+<!-- ================= RISK ASSESSMENT ================= -->
+<section id="risk" class="page">
+  <h3>Risk Assessment Result</h3>
+
+  {% if result %}
+  <div class="result-box">
+    <h4>Classification: {{ result }}</h4>
+    <p>{{ plan }}</p>
+  </div>
+
+  <div class="result-box">
+    <h4>AI Explanation</h4>
+    <p>{{ explanation }}</p>
+  </div>
+  {% endif %}
+</section>
+
+<!-- ================= ANALYTICS ================= -->
+<section id="analytics" class="page">
+  <h3>Orbital Analytics</h3>
+
+  <div class="stats">
+    <div class="card">
+      <p>Most Debris Orbit</p>
+      <h2>LEO</h2>
+    </div>
+    <div class="card">
+      <p>High Risk Objects</p>
+      <h2>1,204</h2>
+    </div>
+    <div class="card">
+      <p>Average Inclination</p>
+      <h2>34°</h2>
+    </div>
+    <div class="card">
+      <p>Cleanup Missions Planned</p>
+      <h2>87</h2>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

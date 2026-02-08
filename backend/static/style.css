@@ -1,0 +1,174 @@
+/* ===== GLOBAL STYLING ===== */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0b1a2a, #050d17);
+    color: white;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    display: flex;
+    gap: 40px;
+    padding: 18px 40px;
+    background: rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00c6ff;
+    border-bottom: 2px solid #00c6ff;
+    padding-bottom: 4px;
+}
+
+/* ===== PAGE SYSTEM ===== */
+
+.page {
+    display: none;
+    padding: 40px;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ===== FORM GRID ===== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* ===== INPUT STYLING (GLASS UI) ===== */
+
+input {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #00c6ff;
+    box-shadow: 0 0 10px #00c6ff;
+}
+
+/* ===== ANALYZE BUTTON ===== */
+
+button, .analyze-btn {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-weight: 600;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.6);
+    transition: 0.3s ease;
+}
+
+button:hover, .analyze-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 198, 255, 0.9);
+}
+
+/* ===== LIVE STATS CARDS ===== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.06);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card h2 {
+    margin: 10px 0;
+    color: #00c6ff;
+}
+
+/* ===== RESULT CARD (RISK PAGE) ===== */
+
+.result-card {
+    background: rgba(255,255,255,0.06);
+    border-left: 4px solid #00c6ff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* ===== TABLE (DEBRIS CATALOG) ===== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table thead {
+    background: rgba(255,255,255,0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+}
+
+table tr {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+table tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* Risk colors */
+
+.high { color: #ff4d4d; font-weight: bold; }
+.medium { color: #ffc107; font-weight: bold; }
+.low { color: #4caf50; font-weight: bold; }
+
+.blue { color: #00c6ff; }
+
+/* ===== SYSTEM STATUS ===== */
+
+.status {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.status .dot {
+    height: 8px;
+    width: 8px;
+    background-color: #00ff88;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
